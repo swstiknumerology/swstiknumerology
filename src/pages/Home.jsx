@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo1 from '../assets/logo1.jpg'; 
+import logo1 from '../assets/Logo1.jpg'; 
 import { TbCrystalBall } from "react-icons/tb";
 import { FaAtom, FaBook, FaAddressBook, FaFileSignature } from "react-icons/fa";
 import { Baby } from 'lucide-react';

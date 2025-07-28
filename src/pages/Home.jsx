@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo1 from '../assets/Logo1.jpg'; 
+import Logo1 from '../assets/Logo1.jpg'; 
 import { TbCrystalBall } from "react-icons/tb";
 import { FaAtom, FaBook, FaAddressBook, FaFileSignature } from "react-icons/fa";
 import { Baby } from 'lucide-react';
@@ -296,7 +296,7 @@ const Home = () => {
           {/* Logo at the top */}
           <div className="mb-6 flex justify-center">
             {/* Replace with your real logo if available */}
-            <img src={logo1} alt="Logo" className="h-20 w-20 object-contain rounded-full border-4 border-[#06402B] bg-white shadow" />
+            <img src={Logo1} alt="Logo" className="h-20 w-20 object-contain rounded-full border-4 border-[#06402B] bg-white shadow" />
           </div>
 
           {/* Title and subtitle */}

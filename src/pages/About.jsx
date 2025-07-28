@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutSection from '../components/AboutSection';
 import WhatWhySection from '../components/WhatWhySection';
-import logo1 from '../assets/logo1.jpg';
+import logo1 from '../assets/Logo1.jpg';
 
 const aboutText = [
   "Hello, I’m Sujl Pandv, a passionate and professional numerologist with over 2.5 years of dedicated experience. My journey began with a fascination for the mystical power of numbers and how they influence our lives in ways most people never imagine.",

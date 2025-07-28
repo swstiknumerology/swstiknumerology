@@ -1,5 +1,5 @@
 import React from 'react';
-import logo1 from '../assets/logo1.jpg';
+import logo1 from '../assets/Logo1.jpg';
 import WhatWhySection from '../components/WhatWhySection';
 import { TbCrystalBall } from 'react-icons/tb';
 import { FaAtom, FaBook, FaAddressBook, FaFileSignature } from 'react-icons/fa';

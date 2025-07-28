@@ -21,12 +21,12 @@ const navLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#06402B] text-[#FFF1CA] pt-10 pb-4 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-evenly items-start">
+    <footer className="bg-[#06402B] text-[#FFF1CA] pt-8 pb-4 px-2 sm:px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 justify-evenly items-start">
         {/* Logo and Brand */}
-        <div className="flex flex-col mb-6 md:mb-0">
-          <div className="flex flex-row items-center gap-4 md:gap-3">
-            <div className="w-16 h-16 bg-[#fff] rounded-full flex items-center justify-center">
+        <div className="flex flex-col mb-8 md:mb-0 px-1 items-center sm:items-start text-center sm:text-left">
+          <div className="flex flex-row items-center gap-4 md:gap-3 justify-center sm:justify-start">
+            <div className="w-16 h-16 bg-[#fff] rounded-full flex items-center justify-center mx-auto sm:mx-0">
               {/* Logo goes here */}
               <img src={logo} alt="Logo" className="h-16 w-auto" />
             </div>
@@ -38,18 +38,17 @@ const Footer = () => {
             </span>
           </div>
           <p
-            className="mt-3 text-white text-[15px] w-xs"
+            className="mt-3 text-white text-[15px] w-xs max-w-xs sm:max-w-full mx-auto sm:mx-0"
             style={{ fontFamily: 'Arial, sans-serif' }}
           >
             Numbers are more than digits they carry energy, meaning, and messages from the universe. At Amazing in Numerology, we reveal the hidden codes behind your name and birth date to help you understand who you truly are and where you're headed. Discover how your numbers can unlock success, harmony, and inner peace.
           </p>
         </div>
 
-
         {/* Navbar Links */}
-        <div>
-          <h3 className="text-[#FFB823] font-semibold text-lg mb-3 mx-16">Quick Links</h3>
-          <ul className="list-disc pl-6 space-y-2 mx-[57px] text-[16px]">
+        <div className="mt-6 sm:mt-0 px-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+          <h3 className="text-[#FFB823] font-semibold text-lg mb-3">Quick Links</h3>
+          <ul className="pl-0 sm:list-disc sm:pl-6 space-y-2 text-[16px]">
             {navLinks.map(link => (
               <li key={link.name}>
                 <Link to={link.path} className="text-white hover:text-[#FFB823] transition-colors">
@@ -60,13 +59,12 @@ const Footer = () => {
           </ul>
         </div>
 
-
         {/* Services */}
-        <div>
-          <h3 className="text-[#FFB823] font-semibold text-xl mb-3 mx-[-18px]">Our Services</h3>
-          <ul className="space-y-2 text-[16px]">
+        <div className="mt-6 sm:mt-0 px-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+          <h3 className="text-[#FFB823] font-semibold text-xl mb-3">Our Services</h3>
+          <ul className="pl-0 sm:list-disc sm:pl-6 space-y-2 text-[16px]">
             {services.map(service => (
-              <li key={service.name} className="text-white list-disc hover:text-[#FFB823] cursor-pointer">
+              <li key={service.name} className="text-white sm:list-disc hover:text-[#FFB823] cursor-pointer">
                 <Link to={service.path} className="hover:text-[#FFB823] transition-colors">
                   {service.name}
                 </Link>
@@ -75,10 +73,8 @@ const Footer = () => {
           </ul>
         </div>
 
-
-
         {/* Contact & Social */}
-       <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center sm:items-start mt-6 sm:mt-0 px-1 text-center sm:text-left">
   <h3 className="text-[#FFB823] font-semibold text-lg mb-3">Contact</h3>
 
   <p className="text-md text-white mb-2">
@@ -113,7 +109,7 @@ const Footer = () => {
     </a>
   </p>
 
-  <div className="flex gap-4 mt-2">
+  <div className="flex gap-4 mt-2 justify-center sm:justify-start">
     <a
       href="https://www.instagram.com/swstiknumerology?igsh=MTJpZ2dteHM4aXdqbA=="
       target="_blank"
@@ -150,7 +146,7 @@ const Footer = () => {
 </div>
 
       </div>
-      <div className="border-t border-[#fff] mt-8 pt-4 text-center text-white text-sm">
+      <div className="border-t border-[#fff] mt-8 pt-4 text-center text-white text-sm px-2">
         © {new Date().getFullYear()} Swstik Numerology. All rights reserved.
       </div>
     </footer>

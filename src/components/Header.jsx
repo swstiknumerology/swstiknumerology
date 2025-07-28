@@ -15,6 +15,7 @@ const navLinks = [
 const Header = () => {
   const { user, logout } = useUser();
   const [dropdown, setDropdown] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -49,7 +50,7 @@ const Header = () => {
             <span style={{ fontFamily: 'Monotype Corsiva, cursive', fontSize: '1.3rem', lineHeight: '1'}}>Numerology</span>
           </span>
         </Link>
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-8" style={{ fontFamily: 'Poppins, sans-serif' }}>
           {navLinks.map(link => (
             <NavLink
@@ -64,13 +65,23 @@ const Header = () => {
             </NavLink>
           ))}
         </nav>
+        {/* Hamburger for Mobile */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+          onClick={() => setMobileNav((prev) => !prev)}
+          aria-label="Toggle navigation"
+        >
+          <span className={`block h-0.5 w-6 bg-[#6B3F19] transition-all duration-300 ${mobileNav ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block h-0.5 w-6 bg-[#6B3F19] my-1 transition-all duration-300 ${mobileNav ? 'opacity-0' : ''}`}></span>
+          <span className={`block h-0.5 w-6 bg-[#6B3F19] transition-all duration-300 ${mobileNav ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+        </button>
         {/* Right Side */}
         <div className="flex items-center gap-6 relative">
           <div className="relative" ref={dropdownRef}>
             {user ? (
               <>
                 <button
-                  className="flex items-center gap-2 text-[#2D4F2B] font-medium focus:outline-none"
+                  className="hidden md:flex items-center gap-2 text-[#2D4F2B] font-medium focus:outline-none"
                   onClick={() => setDropdown((prev) => !prev)}
                   type="button"
                 >
@@ -92,7 +103,7 @@ const Header = () => {
             ) : (
               <>
                 <button
-                  className="flex items-center gap-1 text-[#2D4F2B] font-medium focus:outline-none"
+                  className="hidden md:flex items-center gap-1 text-[#2D4F2B] font-medium focus:outline-none"
                   onClick={() => setDropdown((prev) => !prev)}
                   type="button"
                 >
@@ -128,7 +139,64 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {/* Mobile nav (optional, not implemented here) */}
+      {/* Mobile nav */}
+      <nav
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${mobileNav ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setMobileNav(false)}
+      >
+        <div
+          className={`absolute top-0 right-0 w-3/4 max-w-xs h-full bg-[#FFF1CA] shadow-lg p-6 flex flex-col gap-6 transition-transform duration-300 ${mobileNav ? 'translate-x-0' : 'translate-x-full'}`}
+          onClick={e => e.stopPropagation()}
+        >
+          <button
+            className="self-end mb-4 text-2xl text-[#6B3F19] focus:outline-none"
+            onClick={() => setMobileNav(false)}
+            aria-label="Close navigation"
+          >
+            &times;
+          </button>
+          {navLinks.map(link => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                `block py-2 px-4 rounded text-lg font-medium transition-colors duration-200 ${isActive ? 'text-[#FFB823] bg-[#FFF1CA] border-l-4 border-[#FFB823]' : 'text-[#06402B] hover:text-[#FFB823] hover:bg-[#FFF1CA]'}`
+              }
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+              onClick={() => setMobileNav(false)}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+          <div className="mt-4 border-t pt-4 flex flex-col gap-2">
+            {user ? (
+              <button
+                onClick={() => { handleLogout(); setMobileNav(false); }}
+                className="w-full text-left px-4 py-2 text-[#2D4F2B] bg-[#FFF1CA] rounded focus:bg-[#FFB823] focus:text-white"
+              >
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 text-[#06402B] bg-[#FFF1CA] rounded-t focus:bg-[#FFB823] focus:text-white"
+                  onClick={() => setMobileNav(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  className="block px-4 py-2 text-[#06402B] bg-[#FFF1CA] rounded-b focus:bg-[#FFB823] focus:text-white"
+                  onClick={() => setMobileNav(false)}
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
+      </nav>
     </header>
   );
 };

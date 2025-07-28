@@ -20,7 +20,7 @@ const whatText = `The word, “numerology,” is the science of numbers. The Num
 const whyText = `Once you learn how to use numerology successfully and implement it in your daily life you will soon see how it can guide you on a path to personal fulfillment and enjoyment. Numerology can be used to find a compatible partner, choose a career, determine your destiny and allows for full advantage of lucky days, events and years.\n\nNumerology is essential for our lives as it offers deep insights into our personality, purpose, and potential. By analyzing birth dates and names, numerology reveals patterns and energies that influence our decisions, relationships, and life path. It helps us understand our strengths and challenges, guiding us toward personal growth, balance, and fulfillment. Numerology also uncovers ideal career paths, compatibility in relationships, and favorable life periods. In a world full of uncertainty, numerology acts as a spiritual compass—empowering us to align with our true nature and make choices with clarity, confidence, and conscious awareness.`;
 
 const About = () => (
-  <div className="min-h-screen  flex flex-col items-center justify-start ` pb-10">
+  <div className="min-h-screen flex flex-col items-center justify-start pb-10 px-2 sm:px-4">
     <AboutSection
       logo={logo1}
       title="About Us"

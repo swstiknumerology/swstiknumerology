@@ -24,23 +24,23 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start pt-16 pb-0 mt-2">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-16 pb-0 mt-2 px-2 sm:px-4">
       {/* Top Section: White background */}
-      <div className="w-full bg-white flex flex-col items-center">
+      <div className="w-full bg-white flex flex-col items-center px-2 sm:px-0">
         {/* Title */}
-        <h1 className="text-7xl md:text-5xl font-semibold mb-2 text-center" style={{ fontFamily: 'Poppins , sans-serif', color: '#06402B' }}>
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-2 text-center leading-tight" style={{ fontFamily: 'Poppins , sans-serif', color: '#06402B' }}>
           Unlock the Secret of Numerology !!
         </h1>
-        <div className="w-46 h-1 mt-5 bg-[#FFB823] mx-auto mb-6 rounded-full" />
+        <div className="w-24 sm:w-46 h-1 mt-5 bg-[#FFB823] mx-auto mb-6 rounded-full" />
         {/* Subtitle */}
-        <h2 className="text-xl md:text-2xl mb-10 text-center font-bold" style={{ fontFamily: 'Arial, sans-serif', color: '#6B3F19' }}>
+        <h2 className="text-base xs:text-lg sm:text-xl md:text-2xl mb-6 sm:mb-10 text-center font-bold" style={{ fontFamily: 'Arial, sans-serif', color: '#6B3F19' }}>
           Know your Name Number      
             </h2>
         
         {/* Form Container */}
         <form
           onSubmit={handleSubmit}
-          className="relative bg-white shadow-xl rounded-2xl border border-[#06402B] px-8 py-10 w-full max-w-2xl flex flex-col gap-6 items-center justify-center"
+          className="relative bg-white shadow-xl rounded-2xl border border-[#06402B] px-2 sm:px-8 py-6 sm:py-10 w-full max-w-2xl flex flex-col gap-6 items-center justify-center"
         >
           <div className="w-full flex flex-col md:flex-row md:items-center gap-4">
             <label className="w-full md:w-1/3 text-[#06402B] font-semibold text-xl">Date of Birth:</label>
@@ -49,7 +49,7 @@ const Home = () => {
               name="dob"
               value={form.dob}
               onChange={handleChange}
-              className="w-full md:w-2/3 px-4 py-2 border  rounded-lg text-[#06402B] focus:outline-none focus:ring-2 focus:ring-[#06402B]"
+              className="w-full md:w-2/3 px-3 py-2 border rounded-lg text-[#06402B] focus:outline-none focus:ring-2 focus:ring-[#06402B] text-base xs:text-lg"
               required
             />
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Enter Name"
-              className="w-full md:w-2/3 px-4 py-2 border rounded-lg text-[#06402B] focus:outline-none focus:ring-2 focus:ring-[#06402B] placeholder-[#06402B]"
+              className="w-full md:w-2/3 px-3 py-2 border rounded-lg text-[#06402B] focus:outline-none focus:ring-2 focus:ring-[#06402B] placeholder-[#06402B] text-base xs:text-lg"
               required
             />
           </div>
@@ -73,7 +73,7 @@ const Home = () => {
               value={form.place}
               onChange={handleChange}
               placeholder="Enter Location"
-              className="w-full md:w-2/3 px-4 py-2 border rounded-lg  text-[#06402B]  focus:outline-none focus:ring-2 focus:ring-[#06402B] placeholder-[#06402B]"
+              className="w-full md:w-2/3 px-3 py-2 border rounded-lg text-[#06402B] focus:outline-none focus:ring-2 focus:ring-[#06402B] placeholder-[#06402B] text-base xs:text-lg"
               required
             />
           </div>
@@ -81,7 +81,7 @@ const Home = () => {
           <div className="w-full flex flex-col md:flex-row justify-end items-center gap-4 mt-4">
             <button
               type="submit"
-              className="w-full md:w-auto px-8 py-3 bg-[#2D4F2B] text-white font-bold rounded-lg shadow"
+              className="w-full md:w-auto px-6 sm:px-8 py-2 sm:py-3 bg-[#2D4F2B] text-white font-bold rounded-lg shadow text-base xs:text-lg"
             >
               Get Result
             </button>
@@ -89,18 +89,18 @@ const Home = () => {
         </form>
 
         {/* Engaging Section Before Cards */}
-        <div className="w-full max-w-6xl text-center mt-10">
+        <div className="w-full max-w-6xl text-center mt-8 sm:mt-10 px-2">
           <p className="text-[#6B3F19] text-lg md:text-2xl font-bold " style={{ fontFamily: 'Arial, sans-serif' }}>
             Dive deeper into your personal numerology! Explore our unique services below to discover how numbers can guide your destiny, enhance your relationships, and reveal your true potential.
           </p>
-          <p className="text-2xl md:text-5xl mt-12 font-bold text-[#06402B] " style={{ fontFamily: 'Poppins, sans-serif' }}>Our Services :</p>
-             <div className="w-38 h-1 bg-[#FFB823] mx-auto mb-10 mt-8 rounded-full" />
+          <p className="text-xl xs:text-2xl md:text-4xl lg:text-5xl mt-8 sm:mt-12 font-bold text-[#06402B] " style={{ fontFamily: 'Poppins, sans-serif' }}>Our Services :</p>
+             <div className="w-20 sm:w-38 h-1 bg-[#FFB823] mx-auto mb-8 sm:mb-10 mt-6 sm:mt-8 rounded-full" />
         </div>
 
 
         
         {/* Cards Section */}
-        <div className="w-full max-w-6xl mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="w-full max-w-6xl mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-1 xs:px-2">
           {/* Personal Birth Chart Card */}
           <div className="relative group bg-gradient-to-br from-[#FFF1CA] via-[#FFF9E3] to-white rounded-3xl shadow-2xl p-8 flex flex-col justify-between border border-[#06402B] overflow-hidden transition-transform duration-300 hover:scale-105">
             {/* Icon */}

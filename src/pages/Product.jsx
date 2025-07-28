@@ -63,15 +63,13 @@ const products = [
 
 export default function Product() {
   return (
-    <div className="bg-[#fff] min-h-screen flex flex-col">
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-10">
+    <div className="bg-[#fff] min-h-screen flex flex-col px-2 sm:px-0">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-2 sm:px-4 py-8 sm:py-10">
         <h1 className="text-3xl md:text-4xl font-bold text-[#06402B] mb-8 text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Our Products
         </h1>
-        
-        <div className="w-46 h-1 bg-[#FFB823] mx-auto mt-4 mb-10 rounded-full" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="w-24 sm:w-46 h-1 bg-[#FFB823] mx-auto mt-4 mb-8 sm:mb-10 rounded-full" />
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-1 xs:px-2">
           {products.map((product) => (
             <div key={product.name} className="bg-[#fff] rounded-2xl shadow-lg border border-gray-200 flex flex-col p-4 transition-transform duration-300 hover:scale-105">
               {/* Image container */}

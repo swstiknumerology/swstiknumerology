@@ -95,12 +95,12 @@ const ServiceCard = ({ title, description, benefits, link }) => (
 );
 
 const Services = () => (
-  <div className="min-h-screen  flex flex-col items-center justify-start pt-16 pb-10">
+  <div className="min-h-screen flex flex-col items-center justify-start pt-16 pb-10 px-2 sm:px-4">
     <h1 className="text-4xl md:text-5xl font-bold text-[#06402B] mb-8 text-center tracking-wide" style={{ letterSpacing: '2px', fontFamily: 'Poppins, sans-serif' }}>
       Our Numerology Services
     </h1>
-    <div className="w-24 h-1 bg-[#FFB823] mx-auto mb-8 rounded-full" />
-    <div className="w-full max-w-6xl mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="w-20 sm:w-24 h-1 bg-[#FFB823] mx-auto mb-8 rounded-full" />
+    <div className="w-full max-w-6xl mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-1 xs:px-2">
       {/* Personal Birth Chart Card */}
       <div className="relative group bg-gradient-to-br from-[#FFF1CA] via-[#FFF9E3] to-white rounded-3xl shadow-2xl p-8 flex flex-col justify-between border border-[#06402B] overflow-hidden transition-transform duration-300 hover:scale-105">
         {/* Icon */}

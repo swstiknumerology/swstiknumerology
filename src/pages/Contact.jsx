@@ -38,9 +38,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start pt-16 pb-10">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-16 pb-10 px-2 sm:px-4">
       {/* Contact Form at the top */}
-      <div className="w-full max-w-2xl mx-auto mt-0">
+      <div className="w-full max-w-2xl mx-auto mt-0 px-1 xs:px-2">
         <div className="bg-[#FFF6D1] rounded-3xl shadow-2xl p-10 border-2 border-[#06402B]">
           <h2 className="text-3xl font-bold text-[#06402B] mb-6 text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact Us</h2>
           {submitted && (

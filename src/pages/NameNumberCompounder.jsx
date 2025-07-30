@@ -67,58 +67,61 @@ const NameNumberCompounder = () => {
 
     return (
         <div className="bg-[#FFF] min-h-screen flex flex-col">
-            <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-10 text-center">
-                <h1 className="text-3xl md:text-4xl font-bold text-[#06402B] mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 md:py-10 text-center">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#06402B] mb-4 md:mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Name Number Compounder
                 </h1>
-                <div className="w-46 h-1 bg-[#FFB823] mx-auto mt-4 mb-8 rounded-full" />
+                <div className="w-32 md:w-46 h-1 bg-[#FFB823] mx-auto mt-2 md:mt-4 mb-6 md:mb-8 rounded-full" />
                 {result ? (
                     <>
                     {/* Main result (letters, numbers, total) */}
-                    <div className="inline-block mb-8">
-                        <div className="flex flex-row justify-center gap-1 text-2xl font-bold text-[#06402B] mb-2" style={{ fontFamily: 'Arial', letterSpacing: '0.2rem' }}>
+                    <div className="inline-block mb-6 md:mb-8">
+                        {/* Letters row - responsive */}
+                        <div className="flex flex-wrap justify-center gap-1 md:gap-2 text-lg md:text-xl lg:text-2xl font-bold text-[#06402B] mb-2" style={{ fontFamily: 'Arial', letterSpacing: '0.1rem' }}>
                             {result.name.toUpperCase().split('').map((char, idx) => (
-                                <span key={idx} className="w-8 inline-block text-center">{char === ' ' ? '\u00A0' : char}</span>
+                                <span key={idx} className="min-w-[1.5rem] md:min-w-[2rem] inline-block text-center px-1">
+                                    {char === ' ' ? '\u00A0' : char}
+                                </span>
                             ))}
                         </div>
-                        <div className="flex flex-row justify-center gap-1 text-xl font-semibold text-[#2D4F2B] mb-4" style={{ fontFamily: 'sans-serif', letterSpacing: '0.2em' }}>
+                        {/* Numbers row - responsive */}
+                        <div className="flex flex-wrap justify-center gap-1 md:gap-2 text-base md:text-lg lg:text-xl font-semibold text-[#2D4F2B] mb-4" style={{ fontFamily: 'sans-serif', letterSpacing: '0.1em' }}>
                             {result.name.toUpperCase().split('').map((char, idx) => (
-                                <span key={idx} className="w-8 inline-block text-center">
+                                <span key={idx} className="min-w-[1.5rem] md:min-w-[2rem] inline-block text-center px-1">
                                     {char === ' ' ? '\u00A0' : (numerologyMap[char] || '')}
                                 </span>
                             ))}
                         </div>
-                        <div className="text-xl text-[#06402B] font-bold mt-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                        <div className="text-lg md:text-xl text-[#06402B] font-bold mt-4 md:mt-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
                             Total: {result.subtotal}
                         </div>
-                        <div className="text-xl text-[#2D4F2B] font-bold mt-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                        <div className="text-lg md:text-xl text-[#2D4F2B] font-bold mt-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
                             {result.subtotal} = {result.reduced}
                         </div>
 
-                        <div className="max-w-md mx-auto  mt-6  bg-[#FFF1CA] border-2 border-[#06402B] rounded-2xl shadow-lg p-6 flex flex-col items-center">
-                        <div className="text-5xl font-extrabold text-[#06402B] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                            {result.reduced}
+                        {/* Result card - responsive */}
+                        <div className="max-w-sm md:max-w-md mx-auto mt-4 md:mt-6 bg-[#FFF1CA] border-2 border-[#06402B] rounded-2xl shadow-lg p-4 md:p-6 flex flex-col items-center">
+                            <div className="text-4xl md:text-5xl font-extrabold text-[#06402B] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                {result.reduced}
+                            </div>
+                            <div className="text-base md:text-lg font-bold text-[#2D4F2B] mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                Ruled by: <span className="text-[#06402B]">{numberInfo[result.reduced]?.ruler || '-'}</span>
+                            </div>
+                            <div className="text-sm md:text-base text-[#06402B] text-center font-bold" style={{ fontFamily: 'sans-serif' }}>
+                                {/* Short description: first sentence only */}
+                                {(numberInfo[result.reduced]?.description || '').split('. ')[0] + '.'}
+                            </div>
                         </div>
-                        <div className="text-lg font-bold text-[#2D4F2B] mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                            Ruled by: <span className="text-[#06402B]">{numberInfo[result.reduced]?.ruler || '-'}</span>
-                        </div>
-                        <div className="text-base text-[#06402B] text-center font-bold" style={{ fontFamily: 'sans-serif' }}>
-                            {/* Short description: first sentence only */}
-                            {(numberInfo[result.reduced]?.description || '').split('. ')[0] + '.'}
-                        </div>
-
-
-                    </div>
                     </div>
                     {/* Full justified paragraph below the card and result */}
-                    <div className="max-w-2xl mx-auto mb-5">
-                        <p className="text-[#06402B] text-base md:text-xl mt-6 text-justify font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    <div className="max-w-2xl mx-auto mb-4 md:mb-5">
+                        <p className="text-[#06402B] text-sm md:text-base lg:text-xl mt-4 md:mt-6 text-justify font-bold leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
                             {numberInfo[result.reduced]?.description || ''}
                         </p>
                     </div>
                     </>
                 ) : (
-                    <div className="text-[#06402B] text-xl font-semibold">No name provided.</div>
+                    <div className="text-[#06402B] text-lg md:text-xl font-semibold">No name provided.</div>
                 )}
             </main>
         </div>

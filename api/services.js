@@ -1,5 +1,5 @@
 // Vercel serverless function for services API
-export default async function handler(req, res) {
+export default function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -79,5 +79,5 @@ export default async function handler(req, res) {
     },
   ];
 
-  return res.status(200).json(services);
+  res.status(200).json(services);
 } 
